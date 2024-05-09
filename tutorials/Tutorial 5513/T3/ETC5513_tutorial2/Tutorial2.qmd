@@ -1,0 +1,111 @@
+---
+title: "Tutorial 2"
+author: "Aditya Rao"
+output:
+  html:
+    toc: true
+    toc_float: true
+    theme: cerulean  
+  pdf: 
+    toc: true
+    toc_float: true
+    theme: cerulean  
+---
+
+# In this section we are loading all the required libraries for the tutorial
+
+```{r Libraries, message = FALSE, warning= FALSE, echo=TRUE}
+library(rmarkdown)
+library(knitr)
+library(tidyverse)
+library(readr)
+library(kableExtra)
+library(ggplot2)
+library(gridExtra)
+```
+
+
+
+## In this tutorial we are looking at the Coronavirus cases detected within the Hubei area as reported in the [Lancet](https://www.thelancet.com/coronavirus) Journal website as of March 12, 2019.
+
+
+# Reading the data
+```{r Table data, message=FALSE, warning=FALSE, echo= FALSE}
+dat <- read_csv("Data/COVID19_March12_Hubei.csv")
+```
+
+## Data in the first 10 rows
+
+```{r reading data rows, message=FALSE, echo=TRUE, warning=FALSE}
+head(dat, n=10)
+```
+
+## Glimpse of the data
+
+```{r glimpse, message=FALSE, echo=TRUE, warning=FALSE}
+glimpse(dat)
+```
+
+## Rows and columns of the data
+The dataset has `r nrow(dat)` rows and `r ncol(dat)`columns in total.
+
+### Why is it important to know the dimension of your dataset?
+*1. Choosing analysis methods: Certain data analysis techniques require a specific number of dimensions to function correctly.
+*2. Understanding data complexity: The number of features can influence the complexity of your data and the difficulty of extracting insights.
+*3.Preventing overfitting: With high-dimensional data (many features), machine learning models can overfit the data, leading to poor performance on unseen examples. 
+4. Optimizing algorithms: Knowing the dimensionality allows you to choose algorithms that are efficient for that specific size and structure of data.
+
+
+## What are the variable names in the dataset? 
+
+```{r Names of the Variables, message=FALSE, echo=TRUE, warning=FALSE}
+names(dat)
+```
+### Explaining the 'AGE' and 'Date of Admission to Hospital' variables in the Dataset.
+
+Age: The patient's chronological age for medical context.
+Date of Admission to Hospital: The date the patient was officially checked into the hospital
+
+
+## Cleaning the dataset
+
+```{r cleaning, echo=TRUE, warning=FALSE, message=FALSE}
+cleaned <-  dat |>
+    select(country, age, sex, city, province, latitude, longitude)
+```
+
+* `age` is a character (`<chr>`)
+* `sex` is a character (`<chr>`)
+* `city` is a character  `<chr>`
+* `province` is a character  `<chr>`
+* `latitute` is double (numeric) `<dbl>`
+* `Longitude` is double (numeric) `<dbl>`
+
+### Converting age to numeric 
+```{r converting into numeric values, message=FALSE, echo=FALSE, warning=FALSE}
+cleaned <- cleaned |>
+  mutate(age = as.numeric(age))
+```
+
+## Inspecting the Data
+``` {r inspecting the data, message=FALSE, echo=TRUE, warning= FALSE}
+head(cleaned$age, 30)
+
+round(sum(is.na(cleaned$age)), digits = 2)
+```
+
+### Dimensions of the new dataset
+```{r dimensions, warning=FALSE, echo=FALSE, message=FALSE}
+
+dim(cleaned)
+dim(cleaned)
+```
+
+
+
+
+
+
+
+
+

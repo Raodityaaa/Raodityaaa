@@ -1,0 +1,21 @@
+---
+title: "ETC5513: Tutorial 2 solution"
+author: "Aditya Rao"
+format: 
+  html:
+    toc: true
+    toc_float: true
+    theme: solar
+---
+
+# Loading libraries {#sec-loading-libraries style="cerulean"}
+
+```{r Chunk 1, message = FALSE}
+library(rmarkdown)
+library(knitr)
+library(tidyverse)
+library(readr)
+library(kableExtra)
+library(ggplot2)
+library(gridExtra)
+```
