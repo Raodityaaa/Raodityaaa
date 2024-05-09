@@ -1,7 +1,7 @@
 {
     "id": "D4CF6051",
-    "path": null,
-    "project_path": null,
+    "path": "C:/Users/Asus/Desktop/Classes/ETC5513/5513 git version control/Test 1.qmd",
+    "project_path": "Test 1.qmd",
     "type": "quarto_markdown",
     "hash": "0",
     "contents": "",
@@ -15,18 +15,18 @@
         "tempName": "Untitled1",
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "0,0",
-        "scrollLine": "0",
+        "cursorPosition": "17,0",
+        "scrollLine": "7",
         "docOutlineVisible": "1",
         "rmdVisualCollapsedChunks": "",
         "rmdVisualModeLocation": "2:0"
     },
     "folds": "",
-    "lastKnownWriteTime": 72057594306363392,
-    "encoding": "",
+    "lastKnownWriteTime": 1715215770,
+    "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1715214647920,
+    "last_content_update": 1715215790783,
     "read_only": false,
     "read_only_alternatives": []
 }
